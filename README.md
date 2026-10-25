@@ -75,25 +75,50 @@ Understand how the household uses electricity over time and what drives that use
 
 ## Setup and run
 
-Requires Python 3.10 or newer.
+Requires Python 3.10 or newer (the notebook was developed with Python 3.13 in Anaconda). The notebook uses these libraries: `pandas`, `numpy`, `matplotlib` and `seaborn`. There are two ways to run it. Choose one.
+
+**First, get the code (both options):**
 
 ```bash
-# 1. Get the code
-git clone https://github.com/<your-username>/household-power-consumption.git
-cd household-power-consumption
+git clone https://github.com/<your-username>/<repository-name>.git
+cd <repository-name>
+```
 
-# 2. Create and activate a virtual environment
+### Option A: Anaconda or an existing Python installation (no virtual environment)
+
+This is how the notebook was developed and run. It uses the `base` kernel (Python 3.13, Anaconda), which already includes the required libraries.
+
+1. Open `Household_power_consumption.ipynb` in Jupyter, JupyterLab or VS Code.
+2. Select the **base** Python kernel. In VS Code this is *Select Kernel* in the top right of the notebook, then the `base (Python 3.13) ~\anaconda3\python.exe` entry.
+3. If a library is missing, install it into that environment:
+
+   ```bash
+   pip install pandas numpy matplotlib seaborn
+   ```
+
+4. Choose **Run > Run All Cells**.
+
+### Option B: A virtual environment (keeps the project's libraries separate)
+
+```bash
+# Create and activate a virtual environment
 python -m venv .venv
 source .venv/bin/activate          # Windows PowerShell: .venv\Scripts\Activate.ps1
 
-# 3. Install the dependencies
-pip install -r requirements.txt
+# Install the libraries the notebook uses
+pip install pandas numpy matplotlib seaborn jupyterlab ipykernel
 
-# 4. Open the notebook and choose Run > Run All Cells
+# Open the notebook and choose Run > Run All Cells
 jupyter lab Household_power_consumption.ipynb
 ```
 
-The notebook reads `Dataset/power.csv`, so start Jupyter from the repository root. Running all cells takes under a minute.
+In VS Code, select the `.venv` interpreter as the notebook kernel instead of `base`.
+
+### Notes for both options
+
+* The notebook reads `Dataset/power.csv`, so open it from the repository root (the folder that contains `Dataset/`).
+* Running all cells takes under a minute.
+
 
 ## Design decisions
 
