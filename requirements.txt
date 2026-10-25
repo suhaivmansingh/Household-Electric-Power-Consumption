@@ -1,0 +1,9 @@
+# Libraries used by the notebook
+pandas>=2.2        # notebook was run with 3.0
+numpy>=1.26
+matplotlib>=3.8
+seaborn>=0.13
+
+# Notebook environment
+jupyterlab>=4.0
+ipykernel>=6.0
